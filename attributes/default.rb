@@ -19,17 +19,16 @@
 
 default["x11utils"]["packages"] = value_for_platform_family(
   "debian" => %w(
-  ),
-  "ubuntu" => %w(
+
   ),
   "suse" => %w(
     xbacklight
     xautolock
     xclip
-    redshift
   )
 )
 
+default["x11utils"]["zypper"]["enabled"] = true
 default["x11utils"]["zypper"]["alias"] = "x11-utilities"
 default["x11utils"]["zypper"]["title"] = "X11 Utilities"
 default["x11utils"]["zypper"]["repo"] = "http://download.opensuse.org/repositories/X11:/Utilities/openSUSE_#{node["platform_version"]}/"
