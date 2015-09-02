@@ -31,5 +31,5 @@ default["x11utils"]["packages"] = value_for_platform_family(
 default["x11utils"]["zypper"]["enabled"] = true
 default["x11utils"]["zypper"]["alias"] = "x11-utilities"
 default["x11utils"]["zypper"]["title"] = "X11 Utilities"
-default["x11utils"]["zypper"]["repo"] = "http://download.opensuse.org/repositories/X11:/Utilities/openSUSE_#{node["platform_version"]}/"
+default["x11utils"]["zypper"]["repo"] = "http://download.opensuse.org/repositories/X11:/Utilities/openSUSE_#{node["platform_version"].to_i.to_s == node["platform_version"] ? "Factory" : node["platform_version"]}/"
 default["x11utils"]["zypper"]["key"] = "#{node["x11utils"]["zypper"]["repo"]}repodata/repomd.xml.key"
